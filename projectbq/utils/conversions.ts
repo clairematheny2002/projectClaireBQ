@@ -1,16 +1,11 @@
-export function kmToMiles(km: number): number {
+export function kmToMiles(
+  km: number
+): number {
   return km * 0.621371;
 }
 
-export function milesToKm(miles: number): number {
-    return miles / 0.621371;
+export function paceKmToMile(
+  paceKm: number
+): number {
+  return paceKm * 1.60934;
 }
-
-function timeToMinutes() {}
-
-
-function minutesToTimeString() {}
-
-export function pacePerKmToMile() {}
-
-export function pacePerMileToKm() {}
