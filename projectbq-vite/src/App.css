@@ -1,0 +1,362 @@
+:root {
+  --bg: #f5f6fb;
+  --surface: #ffffff;
+  --surface-strong: #f1f4fb;
+  --text: #363b4e;
+  --text-muted: #6b7280;
+  --text-strong: #111827;
+  --border: #dde3f2;
+  --accent: #5b7cff;
+  --accent-soft: rgba(91, 124, 255, 0.12);
+  --shadow: 0 24px 60px rgba(40, 57, 101, 0.08);
+  --radius: 28px;
+  --radius-sm: 16px;
+  --sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: radial-gradient(circle at top, #eef3ff 0%, #f5f6fb 45%, #f7f8fb 100%);
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: transparent;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 36px 24px;
+  display: grid;
+  place-items: center;
+}
+
+.app-container {
+  width: min(100%, 1040px);
+  display: grid;
+  gap: 28px;
+}
+
+.page-header {
+  display: grid;
+  gap: 14px;
+  padding: 32px 32px 24px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 2.2vw, 3.4rem);
+  line-height: 1.02;
+  color: var(--text-strong);
+}
+
+.lead {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 860px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.card-panel {
+  display: grid;
+  gap: 24px;
+  align-self: start;
+}
+
+.goal-selector {
+  display: grid;
+  gap: 14px;
+  align-items: start;
+  align-self: start;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 1rem;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+}
+
+.goal-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pill-button {
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: #f4f6ff;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.pill-button:hover,
+.pill-button:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(91, 124, 255, 0.35);
+}
+
+.pill-button.active {
+  background: linear-gradient(135deg, #4f6cff 0%, #6f84ff 100%);
+  color: #ffffff;
+  border-color: rgba(79, 108, 255, 0.35);
+  box-shadow: 0 12px 20px rgba(79, 108, 255, 0.18);
+}
+
+.form-panel {
+  display: grid;
+  gap: 20px;
+}
+
+.field-group {
+  display: grid;
+  gap: 12px;
+}
+
+.control-label {
+  display: block;
+  color: #111827;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.text-input {
+  width: 100%;
+  padding: 16px 16px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--text-strong);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: rgba(91, 124, 255, 0.75);
+  box-shadow: 0 0 0 4px rgba(91, 124, 255, 0.12);
+}
+
+.time-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.time-input {
+  text-align: center;
+}
+
+.card-results {
+  display: grid;
+  gap: 24px;
+  align-content: start;
+}
+
+.card-header {
+  display: grid;
+  gap: 10px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.65rem;
+  color: var(--text-strong);
+}
+
+.stat-list {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+
+.stat-item {
+  display: grid;
+  gap: 6px;
+  padding: 18px 20px;
+  border-radius: 20px;
+  background: #f8faff;
+  border: 1px solid #e4e9f7;
+}
+
+.stat-item dt {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.stat-item dd {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+@media (max-width: 640px) {
+  .page-header,
+  .card {
+    padding: 24px;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+  .app-shell {
+    padding: calc(env(safe-area-inset-top) + 20px) 16px 36px;
+  }
+
+  .app-container {
+    gap: 18px;
+    width: 100%;
+  }
+
+  .page-header {
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 1.6rem;
+    line-height: 1.05;
+  }
+
+  .lead {
+    font-size: 0.95rem;
+    padding: 0 6px;
+  }
+
+  .app-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .card-panel {
+    gap: 14px;
+  }
+
+  .pill-button {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    min-width: 64px;
+  }
+
+  .form-panel {
+    gap: 14px;
+  }
+
+  .text-input {
+    padding: 14px 12px;
+    border-radius: 12px;
+    font-size: 1rem;
+  }
+
+  .time-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .time-input {
+    padding: 12px;
+  }
+
+  .card-results {
+    padding: 18px;
+  }
+
+  .stat-list {
+    gap: 12px;
+  }
+
+  .stat-item {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .stat-item dd {
+    font-size: 1.05rem;
+  }
+
+  /* Make interactive areas larger for touch */
+  .pill-button,
+  .text-input {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    touch-action: manipulation;
+  }
+}
+
+/* Small phones: stack stat items into compact list */
+@media (max-width: 360px) {
+  .page-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .eyebrow {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .pill-button {
+    padding: 9px 12px;
+    font-size: 0.9rem;
+  }
+}
