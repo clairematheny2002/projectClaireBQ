@@ -101,8 +101,10 @@ function App() {
           </div>
 
           <ResultsCard calculations={calculations} />
+        
         </section>
       </div>
+
     </main>
   );
 }
